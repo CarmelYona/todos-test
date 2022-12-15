@@ -1,0 +1,56 @@
+// Flex 
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+// List 
+.clean-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+// Grid
+
+.grid {
+    display: grid;
+}
+
+// Other
+.text-light {
+    color: $clr-light;
+}
+
+a {
+    color: $clr-primary;
+    transition: $transition;
+
+    :hover {
+        color: $clr-white;
+    }
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: $clr-primary;
+    padding: 0.75rem 1.2rem;
+    cursor: pointer;
+    border: 1px solid $clr-primary;
+    transition: $transition;
+
+    :hover {
+        background-color: $clr-white;
+        color: $clr-bg;
+        border-color: transparent;
+    }
+}
+
+.btn-primary {
+    background-color: $clr-primary;
+    color: $clr-bg;
+}
