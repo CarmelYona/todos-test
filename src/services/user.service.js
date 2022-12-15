@@ -12,7 +12,7 @@ async function getUsers() {
     try{
         const response =await fetch('https://jsonplaceholder.typicode.com/users')
         const users= await response.json()
-        await _save(users)
+        // await _save(users)
         return users
     }catch(err){console.log(err)}
 }
