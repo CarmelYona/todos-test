@@ -1,8 +1,5 @@
-
-
 export const Comments = (props) => {
     const { comments, setComments } = props
-    console.log(comments)
     return <div className=" comments flex column">
         <h1>Comments List:</h1>
         <button onClick={() => setComments(null)} className="btn-cloase">Close</button>

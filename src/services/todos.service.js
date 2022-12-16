@@ -12,4 +12,3 @@ async function getTodos(userId) {
         return await response.json()
     } catch(err){console.log(err)}
 }
-

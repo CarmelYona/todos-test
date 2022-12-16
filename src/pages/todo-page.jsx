@@ -13,15 +13,20 @@ export const TodoPage = () => {
     const [todos, setTodos] = useState(null)
 
     useEffect(() => {
-        loadusers()
+        loadUsers()
     }, [])
 
-    const loadusers = async () => {
+    const loadUsers = async () => {
         setUsers(await userService.getUsers())
     }
 
     const loadTodos = async (userId) => {
         setTodos(await TodosService.getTodos(userId))
+    }
+
+    const updateUser = async (userToUpdate) => {
+        await userService.updateUser(userToUpdate)
+        loadUsers()
     }
 
     if (!users?.length) return <div>Loading..</div>
@@ -31,6 +36,6 @@ export const TodoPage = () => {
             {todos ? <UserTodos todos={todos} setTodos={setTodos} /> : <div><h1>Todos List:</h1></div>}
         </div>
 
-        {user && <Modal item={user} setItem={setUser} type='user' />}
+        {user && <Modal item={user} setItem={setUser} type='user' updateFunc={updateUser} />}
     </section>
 }

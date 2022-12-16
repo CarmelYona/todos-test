@@ -7,7 +7,6 @@ import { blogService } from "../services/blog.service"
 
 export const BlogPage = () => {
     const [posts, setPosts] = useState([])
-    const [post, setPost] = useState(null)
     const [comments, setComments] = useState(null)
 
     useEffect(() => {
