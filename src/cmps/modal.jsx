@@ -6,14 +6,18 @@ export const Modal = (props) => {
     const [isEdit, setIsEdit] = useState(false)
 
     const handleChange = ({ target }) => {
-        const field = target.id
-        const field2 = field.includes('.') ? field.split('.')[1] : null
+        let field = target.id
         const val = target.textContent
-        if (field2) setUser({ ...user, [field]: { ...[field], [field2]: val } })
-        setUser({ ...user, [field]: val })
+        if (field === 'city' || field === 'street' || field === 'suite') {
+            setUser({ ...user, address: { ...user.address, [field]: val } })
+        } else if (field === 'company name' || field === 'bs' || field === 'catchPhrase') {
+            field = field === 'company name' ? 'name' : field
+            setUser({ ...user, company: { ...user.company, [field]: val } })
+        } else {
+            setUser({ ...user, [field]: val })
+        }
     }
 
-    console.log(user)
     return (
         <div className="modal flex column">
             <button onClick={() => setItem(null)}>X</button>
@@ -30,17 +34,17 @@ export const Modal = (props) => {
                 <div className="body flex column">
 
                     <div className="address flex column">
-                        <h3>Address:</h3>
-                        <h4 id='address.city' name='city' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.address.city}</h4>
-                        <h4>{item.address.street}</h4>
-                        <h4>{item.address.suite}</h4>
+                        <h2>Address:</h2>
+                        <h4 id='city' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.address.city}</h4>
+                        <h4 id='street' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.address.street}</h4>
+                        <h4 id='suite' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.address.suite}</h4>
                     </div>
 
                     <div className="company flex column">
-                        <h3>Company:</h3>
-                        <h4>{item.company.name}</h4>
-                        <h4>{item.company.bs}</h4>
-                        <h4>{item.company.catchPhrase}</h4>
+                        <h2>Company:</h2>
+                        <h4 id='company name' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.company.name}</h4>
+                        <h4 id='bs' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.company.bs}</h4>
+                        <h4 id='catchPhrase' onInput={handleChange} contentEditable={isEdit} suppressContentEditableWarning={isEdit}>{item.company.catchPhrase}</h4>
                     </div>
 
                 </div>
