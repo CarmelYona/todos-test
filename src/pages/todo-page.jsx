@@ -25,6 +25,7 @@ export const TodoPage = () => {
     }
 
     const updateUser = async (userToUpdate) => {
+        console.log(userToUpdate)
         await userService.updateUser(userToUpdate)
         loadUsers()
     }
