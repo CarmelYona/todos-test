@@ -4,10 +4,14 @@
 // BASICS
 @import './basics/base';
 @import './basics/helpers';
-// PAGES
-@import './pages/home-page';
 
 // COMPONENTS
+@import './cmps/header';
+@import './cmps/nav-bar';
+@import './cmps/list-preview';
 
+// PAGES
+@import './pages/home-page';
+@import './pages/todo-page';
 
 // MQ
