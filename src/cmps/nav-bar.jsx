@@ -1,6 +1,9 @@
 
 export const NavBar = () => {
     return <nav>
-        NavBar
+        <div>T</div>
+        <div>E</div>
+        <div>S</div>
+        <div>T</div>
     </nav>
 }

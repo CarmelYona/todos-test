@@ -33,7 +33,7 @@ export const TodoPage = () => {
         setTimeout(async () => {
             setUsers(await userService.getUsers())
 
-        }, 2300)
+        }, 1000)
     }
 
     const loadTodos = async (userId) => {

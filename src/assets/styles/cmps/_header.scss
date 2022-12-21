@@ -1,5 +1,25 @@
 header {
     min-width: 100%;
-    min-height: 5rem;
     background: darken($clr-bg, 7%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header-wrapper {
+        width: 95%;
+        justify-content: space-between;
+
+        .logo {
+            font-size: 4rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-btn {
+            font-size: 2rem;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
 }

@@ -37,14 +37,15 @@ a {
 .btn {
     width: max-content;
     display: inline-block;
-    color: $clr-primary;
+    color: white;
     padding: 0.75rem 1.2rem;
     cursor: pointer;
-    border: 1px solid $clr-primary;
-    transition: $transition;
+    border: 1px solid #4db5ff;
+    transition: all 700ms ease;
+    background: transparent;
 
-    :hover {
-        background-color: $clr-white;
+    &:hover {
+        background-color: darken(#4db5ff, 10%);
         color: $clr-bg;
         border-color: transparent;
     }
