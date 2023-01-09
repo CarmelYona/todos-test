@@ -53,7 +53,8 @@ export const TodoPage = () => {
             <div className="page-body-container flex">
                 <NavBar />
                 <List loadFunc={loadTodos} items={users} setItem={setUser} type='users' />
-                {todos ? <UserTodos todos={todos} setTodos={setTodos} /> : <div><h1>Todos List:</h1></div>}
+                <UserTodos todos={todos} setTodos={setTodos} />
+                {/* {todos ? <UserTodos todos={todos} setTodos={setTodos} /> : <div><h1>Todos List:</h1></div>} */}
             </div>
         </div>
 

@@ -1,0 +1,14 @@
+.user-todos {
+    width: 100%;
+    padding: 1rem;
+    max-height: 90%;
+
+    .todos-header {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .todos-list {
+        overflow-y: auto;
+    }
+}

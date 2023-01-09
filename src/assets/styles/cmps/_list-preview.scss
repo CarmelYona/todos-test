@@ -1,8 +1,12 @@
 .list {
     padding: 1rem 1.5rem;
-    height: 100%;
+    max-height: 90%;
     width: 30%;
     border-right: 1px solid $clr-bg-variant;
+
+    .list-header {
+        padding: 1rem;
+    }
 
     .preview {
         padding: 1rem;
