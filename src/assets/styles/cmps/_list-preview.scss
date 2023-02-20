@@ -23,4 +23,8 @@
             cursor: pointer;
         }
     }
+
+    .active {
+        background: darken($clr-bg, 3%);
+    }
 }

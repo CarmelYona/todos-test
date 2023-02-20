@@ -41,7 +41,6 @@ export const TodoPage = () => {
     }
 
     const updateUser = async (userToUpdate) => {
-        console.log(userToUpdate)
         await userService.updateUser(userToUpdate)
         loadUsers()
     }
@@ -52,7 +51,7 @@ export const TodoPage = () => {
             <Header />
             <div className="page-body-container flex">
                 <NavBar />
-                <List loadFunc={loadTodos} items={users} setItem={setUser} type='users' />
+                <List loadFunc={loadTodos} items={users} setItem={setUser} type='users' state={todos ? todos[0] : null} />
                 <UserTodos todos={todos} setTodos={setTodos} />
                 {/* {todos ? <UserTodos todos={todos} setTodos={setTodos} /> : <div><h1>Todos List:</h1></div>} */}
             </div>
